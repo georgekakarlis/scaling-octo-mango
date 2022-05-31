@@ -19,14 +19,20 @@ Route::get('/', function () {
 
 
 Route::get('posts/{post}', function($slug) {
+  //1we build a path
     $path = __DIR__ . "/../resources/posts/{$slug}.html";
-
+//1we see if the file exists
     if (! file_exists($path)) {
         return redirect('/');
     }
+//2caching for expensive operations
+$post = cache()->remember("posts.{$slug}", 1200, fn() => file_get_contents($path));
 
-    $post = file_get_contents($path);
 
+
+//1and if it does we fetch the content
+    //$post = file_get_contents($path);
+//1and we pass it to the view
         return view ('post', [
         'post' => $post
     ]);
