@@ -5,29 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/app.css">
-    <title>Blog</title>
+    <title>George's Blog</title>
 </head>
 <body>
+    <?php foreach ($posts as $post) : ?>
     <article>
-        <h1><a href="/posts/my-first-post">My first post</a></h1>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, nobis magni nisi aliquid repudiandae ratione excepturi ab temporibus quod sed atque eius, autem, vel earum quisquam tempore quidem voluptate error.
-        </p>
+       <?= $post; ?>
     </article>
-    <article>
-        <h1><a href="/posts/my-second-post">My Second post</a></h1>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, nobis magni nisi aliquid repudiandae ratione excepturi ab temporibus quod sed atque eius, autem, vel earum quisquam tempore quidem voluptate error.
-        </p>
-    </article>
-    <article>
-        <h1><a href="/posts/my-third-post">My Third post</a></h1>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, nobis magni nisi aliquid repudiandae ratione excepturi ab temporibus quod sed atque eius, autem, vel earum quisquam tempore quidem voluptate error.
-        </p>
-    </article>
+    <?php endforeach; ?>
 </body>
 </html>
